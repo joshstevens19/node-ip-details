@@ -62,7 +62,7 @@ async () => {
 
 ## initialise the ip details module
 
-The ip-details package has used classes which contain an contructor which is dependate on a config supplied (see below for details on the config). This then allows the developer to initialise the class and then use it throughout without having to supply the same details constantly. You can initialise this class and once and then use it throughout, if you want to use it for another IP you need to reinitialise the class to use it. 
+The ip-details package uses classes which contain a contructor which is dependate on a config supplied (see below for details on the config). This then allows the developer to initialise the class and then use it throughout without having to supply the same details constantly. If you want to use it for another IP you need to reinitialise the class.
 
 ```js
 // import that library
@@ -71,9 +71,17 @@ const ipdetails = require('./ipdetails');
 const ipInitialised = ipdetails.initialise({ip: "1.1.1.1"});
 ```
 
-once initialised you can use all the functions which have been written which is explained below.
+once initialised you can use all the functions which are explained below.
 
-## Get the latitude and longitude of the ip address 
+## config - this will get updated when more config options are added
+
+```js
+{
+    ip: "this is the ip address you want to get the details about"
+}
+```
+
+## get the latitude and longitude of the ip address 
 
 ### native promises 
 
@@ -85,8 +93,12 @@ ipInitialised.getLatitudeAndLongitude()
 
 ```js
 async () => {
-  const results = await ipInitialised.getLatitudeAndLongitude();
-  console.dir(results);
+     try {
+        const results = await ipInitialised.getLatitudeAndLongitude();
+        console.dir(results);
+     } catch (err) {
+         // ... error checks
+     }
 }
 ```
 
@@ -99,7 +111,7 @@ async () => {
 }
 ```
 
-## Get the timezone of the ip address
+## get the timezone of the ip address
 
 ### native promises 
 
@@ -116,8 +128,7 @@ async () => {
      try {
         const results = await ipInitialised.getTimezone();
         console.dir(results);
-     }
-     catch (err) {
+     } catch (err) {
          // ... error checks
      }
 }
@@ -127,7 +138,7 @@ async () => {
 
 This will just return an timezone i.e. "Europe/London"
 
-## Get the internet provider of the ip address
+## get the internet provider of the ip address
 
 ### native promises 
 
@@ -144,8 +155,7 @@ async () => {
      try {
         const results = await ipInitialised.getInternetProvider();
         console.dir(results);
-     }
-     catch (err) {
+     } catch (err) {
          // ... error checks
      }
 }
@@ -154,7 +164,7 @@ async () => {
 
 This will just return a string with the internet providers name i.e. "Virgin Media"
 
-## See if the ip address is on an proxy
+## see if the ip address is on an proxy
 
 ### native promises 
 
@@ -171,8 +181,7 @@ async () => {
      try {
         const results = await ipInitialised.isOnProxy();
         console.dir(results);
-     }
-     catch (err) {
+     } catch (err) {
          // ... error checks
      }
 }
@@ -182,7 +191,7 @@ async () => {
 
 This will just return a boolean
 
-## See if the ip address is on a mobile 
+## see if the ip address is on a mobile 
 
 ### native promises 
 
@@ -199,8 +208,7 @@ async () => {
      try {
         const results = await ipInitialised.isOnMobile();
         console.dir(results);
-     }
-     catch (err) {
+     } catch (err) {
          // ... error checks
      }
 }
@@ -210,7 +218,7 @@ async () => {
 
 This will just return a boolean
 
-## Get the address of the ip address
+## get the address of the ip address
 
 ### native promises 
 
@@ -227,8 +235,7 @@ async () => {
      try {
         const results = await ipInitialised.getAddress();
         console.dir(results);
-     }
-     catch (err) {
+     } catch (err) {
          // ... error checks
      }
 }
@@ -247,11 +254,11 @@ async () => {
 }
 ```
 
-## Provider
+## provider
 
 To get all the information for the ip address this packages uses a free provider called "ip-api". They allow the use of there packages for non-commercial use. Look at there usage limits below to see the criteria of using this package:
 
-### Usage limits
+### usage limits
 Our system will automatically ban any IP addresses doing over 150 requests per minute. To unban your IP click [here](http://ip-api.com/docs/unban).
 
 You are free to use ip-api.com for non-commercial use. We do not allow commercial use without prior approval.
