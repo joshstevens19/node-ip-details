@@ -1,0 +1,20 @@
+{
+  "name": "node-ip-details",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "start": "npm start",
+    "test": "mocha ./tests/*.test.js"
+  },
+  "private": false,
+  "dependencies": {
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "~6.0.60",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^5.1.1"
+  }
+}
