@@ -1,7 +1,7 @@
 {
   "author": "Josh Stevens <joshstevens19@hotmail.co.uk> (https://github.com/joshstevens19)",
   "contributors": [],
-  "name": "node-ip-details",
+  "name": "ip-details",
   "description": "ip-details is an lightweight fast node package to find full details of any ip address",
   "version": "0.0.1",
   "license": "MIT",
