@@ -3,7 +3,7 @@
   "contributors": [],
   "name": "node-ip-details",
   "description": "ip-details is an lightweight fast node package to find full details of any ip address",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "keywords": [
     "ip",
