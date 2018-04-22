@@ -11,7 +11,7 @@ ip-details has been designed to be the simplest way possible to retrieve full de
 
 ```js
 // import that library
-const ipdetails = require('ipdetails');
+const ipdetails = require('node-ip-details');
 // initilise the class with the config details
 const ipInitialised = ipdetails.initialise({ip: "1.1.1.1"});
 
@@ -25,7 +25,7 @@ ipInitialised.allInformation()
 
 ```js
 // import that library
-const ipdetails = require('ipdetails');
+const ipdetails = require('node-ip-details');
 // initilise the class with the config details
 const ipInitialised = ipdetails.initialise({ip: "1.1.1.1"});
 
@@ -66,7 +66,7 @@ The ip-details package uses classes which contain a contructor which is dependat
 
 ```js
 // import that library
-const ipdetails = require('./ipdetails');
+const ipdetails = require('node-ip-details');
 // initilise the class with the config details
 const ipInitialised = ipdetails.initialise({ip: "1.1.1.1"});
 ```
