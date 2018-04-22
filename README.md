@@ -39,7 +39,7 @@ async () => {
 }
 ```
 
-### example response 
+### example successful response 
 
 ```js
 {
@@ -102,7 +102,7 @@ async () => {
 }
 ```
 
-### example response 
+### example successful response 
 
 ```js
 {
@@ -134,7 +134,7 @@ async () => {
 }
 ```
 
-### example response 
+### example successful response  
 
 This will just return an timezone i.e. "Europe/London"
 
@@ -160,7 +160,7 @@ async () => {
      }
 }
 ```
-### example response 
+### example successful response 
 
 This will just return a string with the internet providers name i.e. "Virgin Media"
 
@@ -187,7 +187,7 @@ async () => {
 }
 ```
 
-### example response 
+### example successful response  
 
 This will just return a boolean
 
@@ -214,7 +214,7 @@ async () => {
 }
 ```
 
-### example response 
+### example successful response 
 
 This will just return a boolean
 
@@ -241,7 +241,7 @@ async () => {
 }
 ```
 
-### example response 
+### example successful response 
 
 ```js
 {
