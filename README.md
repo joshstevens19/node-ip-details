@@ -2,7 +2,7 @@
 
 [![npm package](https://nodei.co/npm/node-ip-details.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-ip-details/)
 
-node-ip-details is an lightweight fast node package to find full details of any ip address. It is perfect to use when wanting to block requests from certain countries ip addresses,tracking if the request has came from a proxy or not,finding out the internet provider for the ip address and finding full geolocation details for the ip.
+node-ip-details is an lightweight fast node package to find full details of any ip address. It is perfect to use when wanting to block requests from certain countries ip addresses, tracking if the request has came from a proxy or not, finding out the internet provider for the ip address and finding full geolocation details for the ip.
 
 ## super simple to use
 
