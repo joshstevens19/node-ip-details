@@ -1,24 +1,33 @@
 {
-  "name": "node-IP-geolocation",
-  "version": "0.0.1",
+  "author": "Josh Stevens <joshstevens19@hotmail.co.uk> (https://github.com/joshstevens19)",
+  "contributors": [],
+  "name": "node-ip-details",
+  "description": "ip-details is an lightweight fast node package to find full details of any ip address",
+  "version": "0.0.4",
   "license": "MIT",
+  "keywords": [
+    "ip",
+    "node"
+  ],
+  "homepage": "https://github.com/joshstevens19/node-ip-details",
+  "bugs": "https://github.com/joshstevens19/node-ip-details/issues",
+  "main": "./lib/ip-details.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/joshstevens19/node-ip-details.git"
+  },
   "scripts": {
     "start": "npm start",
     "test": "mocha ./tests/*.test.js"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   },
   "devDependencies": {
-    "@types/node": "~6.0.60",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.26.0",
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
-    "mocha": "^5.1.1",
-    "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "mocha": "^5.1.1"
   }
 }
