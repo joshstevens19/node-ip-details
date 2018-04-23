@@ -2,7 +2,7 @@
 
 [![npm package](https://nodei.co/npm/node-ip-details.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/node-ip-details/)
 
-node-ip-details is an lightweight fast node package to find full details of any ip address. It is perfect to use when wanting to block requests from certain countries ip addresses,tracking if the request has came from a proxy or not, finding out the internet provider for the ip address and finding full geolocation details for the ip.
+node-ip-details is an lightweight fast node package to find full details of any ip address. It is perfect to use when wanting to block requests from certain countries ip addresses,tracking if the request has came from a proxy or not,finding out the internet provider for the ip address and finding full geolocation details for the ip.
 
 ## super simple to use
 
@@ -85,8 +85,8 @@ async () => {
     regionCode: "Eng",
     countryName: "United Kingdom",
     countryCode: "GB",
-    latitude: "54.8794",
-    longitude: "-6.7389",
+    latitude: 54.8794,
+    longitude: -6.7389,
     mobile: false,
     internetProvider: "Virgin Media",
     proxy: "false",
@@ -153,14 +153,18 @@ Bulk request will not give you details about if they are on mobile or if they ar
 
 The node-ip-details package uses classes which contain a contructor which is dependate on a config supplied (see below for details on the config). This then allows the developer to initialise the class and then use it throughout without having to supply the same details constantly. If you want to use it for another ip or ips you need to reinitialise the class.
 
-```js single ip address
+#### single ip address
+
+```js
 // import that library
 const ipdetails = require("node-ip-details");
 // initilise the class with the config details
 const ipInitialised = ipdetails.initialise({ip: "1.1.1.1"});
 ```
 
-```js multiple ip addresses, you can request a maximum of 100 in each request
+#### multiple ip addresses, you can request a maximum of 100 in each request
+
+```js
 // import that library
 const ipdetails = require("node-ip-details");
 // initilise the class with the config details
@@ -199,13 +203,30 @@ async () => {
 }
 ```
 
-### example successful response
+### example successful response for single ip
 
 ```js
 {
     latitude: 58.6333,
     longitude: -1.9333,
 }
+```
+
+### example successful response for multiple ips
+
+```js
+[
+  {
+    latitude: -37.7,
+    longitude: 145.1833,
+    query: "1.1.1.1",
+  },
+  {
+    latitude: 37.4229,
+    longitude: -122.085,
+    query: "8.8.8.8",
+  }
+]
 ```
 
 ## get the timezone of the ip address(es)
@@ -231,9 +252,26 @@ async () => {
 }
 ```
 
-### example successful response
+### example successful response for single ip
 
-This will just return an timezone i.e. "Europe/London"
+```js
+"Europe/London"
+```
+
+### example successful response for multiple ips
+
+```js
+[
+  {
+    timezone: "Australia/Melbourne",
+    query: "1.1.1.1",
+  },
+  {
+    timezone: "America/Los_Angeles",
+    query: "8.8.8.8",
+  }
+]
+```
 
 ## get the internet provider of the ip address(es)
 
@@ -257,9 +295,26 @@ async () => {
      }
 }
 ```
-### example successful response
+### example successful response for single ip
 
-This will just return a string with the internet providers name i.e. "Virgin Media"
+```js
+"Virgin Media"
+```
+
+### example successful response for multiple ips
+
+```js
+[
+  {
+    provider: "APNIC and Cloudflare DNS Resolver project",
+    query: "1.1.1.1",
+  },
+  {
+    provider: "Google",
+    query: "8.8.8.8",
+  }
+]
+```
 
 ## see if the ip address is on an proxy (not supported for `ips`)
 
@@ -284,9 +339,15 @@ async () => {
 }
 ```
 
-### example successful response
+### example successful response for single ip
 
-This will just return a boolean
+```js
+true
+```
+
+### example successful response for multiple ips
+
+Not supported for multiple ips request
 
 ## see if the ip address is on a mobile (not supported for `ips`)
 
@@ -311,9 +372,15 @@ async () => {
 }
 ```
 
-### example successful response
+### example successful response for single ip
 
-This will just return a boolean
+```js
+true
+```
+
+### example successful response for multiple ips
+
+Not supported for multiple ips request
 
 ## get the address of the ip address
 
@@ -338,17 +405,42 @@ async () => {
 }
 ```
 
-### example successful response
+### example successful response for single ip
 
 ```js
 {
     city: "Leicester",
-    zip: "LE3 456",
+    zip: "LE1",
     regionName: "England",
     regionCode: "ENG",
     countryName: "United Kingdom",
     countryCode: "GB",
 }
+```
+
+### example successful response for multiple ips
+
+```js
+[
+  {
+    city: "Research",
+    zip: "3095"
+    regionName: "Victoria",
+    regionCode: "VIC",
+    countryName: "Australia",
+    countryCode: "AU",
+    query: "1.1.1.1",
+  },
+  {
+    city: "Mountain View",
+    zip: "",
+    regionName: "California",
+    regionCode: "CA",
+    countryName: "United States",
+    countryCode: "US",
+    query: "8.8.8.8",
+  }
+]
 ```
 
 ## provider
@@ -363,3 +455,9 @@ You are free to use ip-api.com for non-commercial use. They do not allow commerc
 For commercial, unlimited use see there [pro service](https://signup.ip-api.com/) (this is very cheap and you can get unlimited API calls for 13$ a month).
 
 ## it is down to the user of the package to use this within the terms of the above.
+
+## disclaimer
+
+ip addresses can be faked with VPN and proxies, the package will give you the most update to date information it has on the ip address which is provided but this ip could of been vpn to fake location etc.
+
+ip addresses can be made private so any private ips will not return any data about them.
