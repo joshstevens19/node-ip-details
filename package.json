@@ -7,7 +7,15 @@
   "license": "MIT",
   "keywords": [
     "ip",
-    "node"
+    "node",
+    "geolocation",
+    "network",
+    "ipv6",
+    "ipv4",
+    "x-client-ip",
+    "connection.remoteAddress",
+    "middlewear",
+    "x-real-ip"
   ],
   "homepage": "https://github.com/joshstevens19/node-ip-details",
   "bugs": "https://github.com/joshstevens19/node-ip-details/issues",
